@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+p {
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.page-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  margin: 30px;
+}
+
+@media (max-width: 600px) {
+  .page-footer {
+    flex-direction: column;
+  }
+}
