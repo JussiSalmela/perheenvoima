@@ -5,6 +5,8 @@ import Dev from '../Pages/Dev';
 import Info from '../Pages/Info';
 import Nepsy from '../Pages/Nepsy';
 import Training from '../Pages/Training';
+import Pricing from '../Pages/Pricing';
+import Downloads from '../Pages/Downloads';
 
 
 export default function AppRoutes() {
@@ -15,6 +17,8 @@ export default function AppRoutes() {
             <Route path="/tietoa" element={<Info />} />
             <Route path="/nepsy" element={<Nepsy />} />
             <Route path="/valmennus" element={<Training />} />
+            <Route path="/hinnasto" element={<Pricing />} />
+            <Route path="/ladattavat" element={<Downloads />} />
             <Route path="/dev" element={<Dev />} />
          </Routes>
    )

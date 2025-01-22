@@ -2,6 +2,7 @@ import React from 'react'
 import PageComponent from '../Components/PageComponent'
 
 export default function Nepsy() {
+   
    return (
       <PageComponent
          imageUrl="fishingCropped.png"
@@ -11,7 +12,7 @@ export default function Nepsy() {
             display: 'flex',
             flexDirection: 'column',
             justifySelf: 'center',
-            textAlign: 'center',
+            // textAlign: 'center',
             maxWidth: '100vh'
          }}>
             <h2 style={{  }}>Nepsyohjaus</h2>

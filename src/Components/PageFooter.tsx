@@ -11,21 +11,19 @@ export default function PageFooter() {
             flexGrow: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            // margin: '20px'
          }}>
             <p>
                Varaa aika soittamalla tai laittamalla viestiä. <br />
-               Pyydä tarjous.
+               {/* Pyydä tarjous. */}
             </p>
          </div>
          <div style={{
             // backgroundColor: 'lightgray',
             display: 'flex',
-            flexDirection: 'column',
             flexGrow: 1,
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            // margin: '20px'
          }}>
             <div>
                <div>

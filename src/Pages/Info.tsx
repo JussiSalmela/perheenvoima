@@ -3,22 +3,15 @@ import PageComponent from '../Components/PageComponent'
 
 export default function Info() {
 
-   const styles = {
-      img: {
-         // width: 250,
-         height: 300,
-      },
-   };
-
    return (
       <PageComponent
-         imageUrl="sandCropped.png"
+         imageUrl="familyCropped.png"
       >
          <div style={{
             display: 'flex',
             flexDirection: 'column',
             justifySelf: 'center',
-            textAlign: 'center',
+            // textAlign: 'center',
             maxWidth: '100vh'
          }}>
             <h2>Tietoa minusta</h2>

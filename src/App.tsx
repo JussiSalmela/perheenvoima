@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link, useNavigate } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, IconButton, Box, ListItemButton, Divider } from '@mui/material';
+import { BrowserRouter as Router, Link, useLocation } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Drawer, List, ListItem, useMediaQuery, IconButton, Box, ListItemButton, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import AppRoutes from './Navigation/AppRoutes';
@@ -13,12 +13,16 @@ function App() {
 
   const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  
+  const location = useLocation();
+  const isLargeScreen = useMediaQuery('(min-width:1050px)');
+
   const navigationlinks = [
     { text: 'Etusivu', path: '/' },
     { text: 'Nepsyohjaus', path: '/nepsy' },
-    { text: 'Tietoa', path: '/tietoa' },
     { text: 'Valmennus', path: '/valmennus' },
+    { text: 'Hinnasto', path: '/hinnasto' },
+    { text: 'Tietoa minusta', path: '/tietoa' },
+    { text: 'Ladattavat materiaalit', path: '/ladattavat' },
     // { text: 'Dev', path: '/dev' }
   ];
 
@@ -28,24 +32,46 @@ function App() {
 
 
   return (
-    <Router>
-      <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
-        <AppBar position="fixed" sx={{ 
-          // backgroundColor: '#e1ccbe'
-          // backgroundColor: '#e7dfd8'
-          backgroundColor: '#e3d1c5'
-          }} >
-          <Toolbar
-            style={{ minHeight: theme.mixins.toolbar.minHeight }}
-          >
-            <Box sx={{ flexGrow: 1 }} />
-            <img src="/PVLogo2.svg" alt="logo" style={{ height: 110, marginRight: 10, marginTop: 5, marginBottom: 5 }} />
-            {/* <img src="/PVLogo.png" alt="logo" style={{ height: 40, marginRight: 10 }} /> */}
-            {/* <Typography variant="h6" noWrap style={{ color: 'black' }}>
+    // <Router>
+    <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
+      <AppBar position="fixed" sx={{
+        // backgroundColor: '#e1ccbe'
+        backgroundColor: '#e7dfd8'
+        // backgroundColor: '#e3d1c5'
+      }} >
+        <Toolbar
+          style={{ minHeight: theme.mixins.toolbar.minHeight }}
+        >
+          <Box sx={{ flexGrow: 1 }} />
+          <img src="/PVLogo2.svg" alt="logo" style={{ height: 110, marginRight: 10, marginTop: 5, marginBottom: 5 }} />
+          {/* <img src="/PVLogo.png" alt="logo" style={{ height: 40, marginRight: 10 }} /> */}
+          {/* <Typography variant="h6" noWrap style={{ color: 'black' }}>
               Perheenvoima
             </Typography> */}
-            <h2 style={{color: 'black'}}>Perheenvoima</h2>
-            <Box sx={{ flexGrow: 1 }} />
+          <h1 style={{ 
+            color: 'black',
+            fontFamily: 'Dancing Script, cursive'
+             }}>Perheenvoima</h1>
+          <Box sx={{ flexGrow: 1 }} />
+          {isLargeScreen ? (
+            navigationlinks.map((link, index) => (
+              <Box key={index} sx={{ marginLeft: 2 }}>
+                <ListItemButton
+                  component={Link}
+                  to={link.path}
+                  style={{
+                    // fontWeight: location.pathname === link.path ? 'bold' : 'none',
+                    textDecoration: location.pathname === link.path ? 'underline' : 'none',
+                    color: location.pathname === link.path ? 'gray' : 'black',
+                    // color: 'black',
+                    // opacity: 0.8,
+                  }}
+                >
+                  {link.text}
+                </ListItemButton>
+              </Box>
+            ))
+          ) : (
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -55,22 +81,23 @@ function App() {
             >
               <MenuIcon />
             </IconButton>
-          </Toolbar>
-        </AppBar>
-        <div>
-          <Drawer
-            anchor='right'
-            variant="temporary"
-            open={drawerOpen}
-            onClose={handleDrawerToggle}
-            PaperProps={{
-              style: {
-                width: drawerWidth,
-                backgroundColor: '#e1ccbe'
-              }
-            }}
-          >
-            {/* <div style={{
+          )}
+        </Toolbar>
+      </AppBar>
+      <div>
+        <Drawer
+          anchor='right'
+          variant="temporary"
+          open={drawerOpen}
+          onClose={handleDrawerToggle}
+          PaperProps={{
+            style: {
+              width: drawerWidth,
+              backgroundColor: '#e1ccbe'
+            }
+          }}
+        >
+          {/* <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-start',
@@ -82,26 +109,33 @@ function App() {
               </IconButton>
             </div>
             <Divider /> */}
-            <List>
-              {navigationlinks.map((link, index) => (
-                <>
+          <List>
+            {navigationlinks.map((link, index) => (
+              <>
                 <ListItem key={index} onClick={() => setDrawerOpen(false)}>
-                  <ListItemButton component={Link} to={link.path}>
-                    {/* <ListItemText primary={link.text} /> */}
-                    <p>{link.text}</p>
+                  <ListItemButton
+                    component={Link}
+                    to={link.path}
+                    style={{
+                      color: location.pathname === link.path ? 'gray' : 'black',
+                    }}
+                  >
+                    <p>
+                      {link.text}
+                    </p>
                   </ListItemButton>
                 </ListItem>
                 <Divider />
-                </>
-              ))}
-            </List>
-          </Drawer>
-          <main style={{ flexGrow: 1, marginTop: theme.mixins.toolbar.minHeight }}>
-            <AppRoutes />
-          </main>
-        </div>
+              </>
+            ))}
+          </List>
+        </Drawer>
+        <main style={{ flexGrow: 1, marginTop: theme.mixins.toolbar.minHeight }}>
+          <AppRoutes />
+        </main>
       </div>
-    </Router>
+    </div>
+    // </Router>
   );
 }
 

@@ -6,7 +6,7 @@ interface PageComponentProps {
    children: ReactNode;
    imageUrl?: string;
    backgroundColor?: string;
- }
+}
 
 export default function PageComponent({ children, imageUrl, backgroundColor }: PageComponentProps) {
 
@@ -24,21 +24,22 @@ export default function PageComponent({ children, imageUrl, backgroundColor }: P
             backgroundImage: `url("/${imageUrl || 'img1.jpg'}")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            zIndex: -1
+            zIndex: -1,
+            opacity: 0.8
          }}>
          </div>
-         <div style={{ 
-            padding: '40px', 
-            backgroundColor: backgroundColor ? backgroundColor : '#e1ccbe', 
+         <div style={{
+            padding: '40px',
+            backgroundColor: backgroundColor ? backgroundColor : '#e1ccbe',
             marginTop: '50vh',
-            overflow: 'hidden', 
-            wordWrap: 'break-word', 
+            overflow: 'hidden',
+            wordWrap: 'break-word',
             textOverflow: 'ellipsis'
-            }}>
-         {/* <div style={{ padding: '40px', backgroundColor: backgroundColor ? backgroundColor : '#e7dfd8', marginTop: '50vh' }}> */}
+         }}>
+            {/* <div style={{ padding: '40px', backgroundColor: backgroundColor ? backgroundColor : '#e7dfd8', marginTop: '50vh' }}> */}
             {children}
          </div>
-         <PageFooter />
+            <PageFooter />
       </div>
    );
 }

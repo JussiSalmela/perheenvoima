@@ -48,10 +48,12 @@ p {
 
 .page-footer {
   display: flex;
+  /* flex: 1; */
   flex-direction: row;
   justify-content: space-between;
-  background-color: white;
-  margin: 30px;
+  /* background-color: white; */
+  background-color: #e6dcd3;
+  padding: 30px;
 }
 
 @media (max-width: 600px) {
