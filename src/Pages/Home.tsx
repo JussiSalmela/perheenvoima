@@ -27,7 +27,7 @@ export default function Home() {
             Perhetyö on lapsen ja perheen hyvinvointia tukeva palvelu. Perhetyö Perheenvoimassa on suunnattu vahvistamaan koko perheen voimavaroja ja parantamaan perheen sisäistä vuorovaikutusta. Yrityksen tarjoama perhetyö neurokirjon perheille on tukitoimi lapsiperheiden arjen haasteisiin, tilanteissa, joissa neuropsykiatriset oireet tai niiden piirteet aiheuttavat haasteita arjen sujuvuudelle. Palvelu alkaa konsultaatiolla jossa kartoitetaan perheen tilannetta. Perheen voimavaroista keskustellaan ja pohditaan, missä vanhemmat mahdollisesti tarvitsisivat lisätukea. Ohjaus voidaan toteuttaa etänä, lapsen ja perheen kotona ja perheen muussa toimintaympäristössä. Toimintani keskiössä on aina lapsen etu, palveluni perustuvat perhelähtöisyyteen,  ratkaisukeskeisyyteen ja luotettavuuteen.
           </p>
         </div>
-        <p style={{fontWeight: 'bold'}}> Mietitkö, voisiko ratkaisukeskeinen perhe valmennus olla teidän juttu? Varaa ilmainen 20 minuutin konsultaatio ja jutellaan aiheesta lisää! <a href="https://calendly.com/jussi-salmela-dev/30min" target="_blank" rel="noreferrer">Siirry kalenteriin</a></p>
+        <p style={{fontWeight: 'bold'}}> Mietitkö, voisiko ratkaisukeskeinen perhe valmennus olla teidän juttu? Varaa ilmainen 20 minuutin konsultaatio ja jutellaan aiheesta lisää! <a href="https://calendly.com/perheenvoima/30min" target="_blank" rel="noreferrer">Siirry kalenteriin</a></p>
       </div>
     </PageComponent>
   );

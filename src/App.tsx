@@ -6,15 +6,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import AppRoutes from './Navigation/AppRoutes';
 import { useTheme } from '@mui/material/styles';
 import './App.css';
+import { light } from '@mui/material/styles/createPalette';
 
-const drawerWidth = 240;
 
 function App() {
-
+  
   const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const location = useLocation();
   const isLargeScreen = useMediaQuery('(min-width:1050px)');
+  const drawerWidth = 240;
 
   const navigationlinks = [
     { text: 'Etusivu', path: '/' },
@@ -23,7 +24,6 @@ function App() {
     { text: 'Hinnasto', path: '/hinnasto' },
     { text: 'Tietoa minusta', path: '/tietoa' },
     { text: 'Ladattavat materiaalit', path: '/ladattavat' },
-    // { text: 'Dev', path: '/dev' }
   ];
 
   const handleDrawerToggle = () => {
@@ -50,7 +50,8 @@ function App() {
             </Typography> */}
           <h1 style={{ 
             color: 'black',
-            fontFamily: 'Dancing Script, cursive'
+            fontFamily: 'Dancing Script, cursive',
+            fontWeight: '100',
              }}>Perheenvoima</h1>
           <Box sx={{ flexGrow: 1 }} />
           {isLargeScreen ? (
@@ -60,6 +61,7 @@ function App() {
                   component={Link}
                   to={link.path}
                   style={{
+                    fontWeight: '500',
                     // fontWeight: location.pathname === link.path ? 'bold' : 'none',
                     textDecoration: location.pathname === link.path ? 'underline' : 'none',
                     color: location.pathname === link.path ? 'gray' : 'black',
@@ -117,6 +119,8 @@ function App() {
                     component={Link}
                     to={link.path}
                     style={{
+                      fontWeight: '500',
+                      textDecoration: location.pathname === link.path ? 'underline' : 'none',
                       color: location.pathname === link.path ? 'gray' : 'black',
                     }}
                   >

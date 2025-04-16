@@ -29,7 +29,7 @@ export default function Training() {
                   <li>Työkaluja arjessa toimimiseen neurokirjolla olevan lapsen kanssa</li>
                </p>
             </div>
-            <p style={{fontWeight: 'bold'}}> Mietitkö, voisiko ratkaisukeskeinen perhe valmennus olla teidän juttu? Varaa ilmainen 20 minuutin konsultaatio ja jutellaan aiheesta lisää! <a href="https://calendly.com/jussi-salmela-dev/30min" target="_blank" rel="noreferrer">Siirry kalenteriin</a></p>
+            <p style={{fontWeight: 'bold'}}> Mietitkö, voisiko ratkaisukeskeinen perhe valmennus olla teidän juttu? Varaa ilmainen 20 minuutin konsultaatio ja jutellaan aiheesta lisää! <a href="https://calendly.com/perheenvoima/30min" target="_blank" rel="noreferrer">Siirry kalenteriin</a></p>
          </div>
       </PageComponent>
    )
