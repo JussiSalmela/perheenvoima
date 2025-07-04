@@ -35,7 +35,7 @@ export default function PageFooter() {
                </div>
                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '8px' }}>
                   <EmailIcon />
-                  <span style={{ marginLeft: '8px', fontWeight: 'bold' }}>lainepia@hotmail.com</span>
+                  <span style={{ marginLeft: '8px', fontWeight: 'bold' }}>perheenvoima@gmail.com</span>
                </div>
             </div>
          </div>

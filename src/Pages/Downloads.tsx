@@ -22,7 +22,7 @@ declare module '@mui/material/Button' {
 const customColor = createTheme({
    palette: {
       custom: {
-         main: '#e1ccbe',
+         main: '#deb295',
          light: '#e1ccbe',
          dark: '#e1ccbe',
          contrastText: '#000000',
@@ -35,7 +35,7 @@ export default function Downloads() {
    const isLargeScreen = useMediaQuery('(min-width:850px)');
    const docJSON = [
       {
-         name: "Dialoginen Lukeminen",
+         name: "Dialoginen lukeminen",
          desc: "",
          href: "/DialoginenLukeminen.pdf"
       },
@@ -126,7 +126,7 @@ export function DLbutton({ href }: { href: string }) {
    )
 }
 
-export function DLContainer({ href, name, desc }: { href?: string, name?: string, desc?: string }) {
+export function DLContainer({ href, name, desc }: { href: string, name?: string, desc?: string }) {
    return (
       <div style={{
          margin: '0px 10px 20px 10px',
@@ -140,7 +140,7 @@ export function DLContainer({ href, name, desc }: { href?: string, name?: string
          <h3>{name ? name : ''}</h3>
          <p style={{ marginTop: 0 }}>{desc ? desc : ''}</p>
          <DLbutton
-            href={href ? href : "/sample150kB.pdf"}
+            href={href}
          />
       </div>
    )
