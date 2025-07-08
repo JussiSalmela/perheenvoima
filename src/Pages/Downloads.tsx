@@ -1,4 +1,3 @@
-import React from 'react'
 import PageComponent from '../Components/PageComponent'
 import { Button, useMediaQuery } from '@mui/material'
 import DownloadIcon from '@mui/icons-material/Download';

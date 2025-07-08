@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Drawer, List, ListItem, useMediaQuery, IconButton, Box, ListItemButton, Divider } from '@mui/material';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { AppBar, Toolbar, Drawer, List, ListItem, useMediaQuery, IconButton, Box, ListItemButton, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import AppRoutes from './Navigation/AppRoutes';
 import { useTheme } from '@mui/material/styles';
 import './App.css';
-import { light } from '@mui/material/styles/createPalette';
 
 
 function App() {
@@ -113,8 +111,8 @@ function App() {
             <Divider /> */}
           <List>
             {navigationlinks.map((link, index) => (
-              <>
-                <ListItem key={index} onClick={() => setDrawerOpen(false)}>
+              <div key={index}>
+                <ListItem onClick={() => setDrawerOpen(false)}>
                   <ListItemButton
                     component={Link}
                     to={link.path}
@@ -123,14 +121,15 @@ function App() {
                       textDecoration: location.pathname === link.path ? 'underline' : 'none',
                       color: location.pathname === link.path ? 'gray' : 'black',
                     }}
-                  >
+                    >
                     <p>
                       {link.text}
                     </p>
                   </ListItemButton>
                 </ListItem>
                 <Divider />
-              </>
+                </div>
+              
             ))}
           </List>
         </Drawer>
