@@ -1,4 +1,3 @@
-import React from 'react'
 import PageComponent from '../Components/PageComponent'
 
 export default function Info() {

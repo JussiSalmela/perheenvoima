@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import PageFooter from '../Components/PageFooter';
 import { useTheme } from '@mui/material/styles';
 
